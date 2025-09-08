@@ -8,6 +8,7 @@ type Question = {
 type Quiz = {
   id: string
   title: string
+  description: string
   questions: Question[]
 }
 
