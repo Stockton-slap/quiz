@@ -1,6 +1,6 @@
 'use client'
 import { Image } from '../common/image'
-import logo from '../../../public/47.jpeg'
+import logo from '../../../public/logo.svg'
 
 const Header = () => {
   return (
@@ -8,8 +8,8 @@ const Header = () => {
       <Image
         src={logo}
         alt="Description of the image"
-        width={30}
-        height={20}
+        width={40}
+        height={40}
         onClick={console.log}
       />
     </div>

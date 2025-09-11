@@ -36,7 +36,6 @@ export class Question implements IQuestion {
   }
 
   export class Quiz {
-
     constructor(public id: string, public title: string, public questions: Question[], public description: string) {
       this.id = id;
       this.title = title;
