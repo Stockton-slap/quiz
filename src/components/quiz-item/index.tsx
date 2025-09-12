@@ -4,10 +4,13 @@ import { Link } from "../common/link";
 
 export default function QuizItem({ quiz }: { quiz: Quiz }) {
   return (
-    <li className="bg-primary rounded-[12px] p-6 border border-black w-full">
-      <Link href={`/quiz/${quiz.id}`}>
-        <h2 className="text-2xl font-semibold">{quiz.title}</h2>
-        <p className="mt-2 text-gray-700">{quiz.description}</p>
+    <li className="border border-black rounded-[12px]">
+      <Link
+        href={`/quiz/${quiz.id}`}
+        className="block w-full h-full p-6 rounded-[12px]"
+      >
+        <h2 className="txt-[20_20_400]">{quiz.title}</h2>
+        <p className="mt-2 txt-[14_14_400]">{quiz.description}</p>
       </Link>
     </li>
   );

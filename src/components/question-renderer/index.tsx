@@ -1,19 +1,16 @@
 import { Question } from "@/abstractions/question";
 import { MultipleChoiceQuestion } from "@/models/questions";
+import { TypeProps } from "@/models/quiz";
+import { Button } from "../common/button";
+import { SingleChoiceQuestion } from "../single-choice-question";
 
-export default function QuestionRenderer({ question }: { question: Question }) {
-  switch (question.type) {
+type IProps = { question: Question, quizType: TypeProps }
+
+export default function QuestionRenderer({ question, quizType }: IProps) {
+  switch (quizType) {
     case 'single-choice':
-      const mcq = question as MultipleChoiceQuestion;
-      return (
-        <ul className="grid grid-cols-2 gap-4 mt-8">
-          {mcq.options.map((answer, idx) => (
-            <li key={idx} className="bg-blue-100 text-blue-800 text-center px-3 py-1 rounded cursor-pointer hover:bg-blue-200">
-              {answer}
-            </li>
-          ))}
-        </ul>
-      );
+    return <SingleChoiceQuestion question={question} />
+
     case 'input':
       return <p>Input question renderer here...</p>;
     default:

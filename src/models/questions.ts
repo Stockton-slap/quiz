@@ -7,7 +7,7 @@ export class MultipleChoiceQuestion extends Question {
     public options: string[],
     public correct: string
   ) {
-    super(id, title, "single-choice"); 
+    super(id, title); 
   }
 
   checkAnswer(userAnswer: string) {
@@ -17,7 +17,7 @@ export class MultipleChoiceQuestion extends Question {
 
 export class InputQuestion extends Question {
   constructor(id: string, title: string, public correct: string) {
-    super(id, title, "input"); 
+    super(id, title); 
   }
 
   checkAnswer(userAnswer: string) {
@@ -32,7 +32,7 @@ export class MatchupQuestion extends Question {
     public buckets: string[][],
     public correctSequence: string[]
   ) { 
-    super(id, title, "match-up");
+    super(id, title);
   }
 
   checkAnswer(userAnswer: string[]) {
