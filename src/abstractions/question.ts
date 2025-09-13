@@ -4,5 +4,5 @@ export abstract class Question {
     public title: string,
   ) {}
 
-  abstract checkAnswer(userAnswer: unknown): boolean;
+  abstract checkAnswer(userAnswer: unknown): boolean
 }

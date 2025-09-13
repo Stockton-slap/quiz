@@ -1,6 +1,6 @@
 'use client'
-import { Quiz } from "@/models/quiz";
-import { Link } from "../common/link";
+import { Quiz } from '@/features/quiz/models/quiz'
+import { Link } from '../../../../shared/components/common/link'
 
 export default function QuizItem({ quiz }: { quiz: Quiz }) {
   return (
@@ -13,5 +13,5 @@ export default function QuizItem({ quiz }: { quiz: Quiz }) {
         <p className="mt-2 txt-[14_14_400]">{quiz.description}</p>
       </Link>
     </li>
-  );
+  )
 }

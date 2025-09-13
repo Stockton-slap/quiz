@@ -1,6 +1,6 @@
 import './globals.css'
-import Header from '../components/header'
-import { lusitana } from '@/ui/fonts'
+import Header from '../shared/components/header'
+import { lusitana } from '@/shared/ui/fonts'
 
 export default function RootLayout({
   children,

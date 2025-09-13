@@ -1,18 +1,20 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require('tailwindcss/plugin');
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
-        primary: '#1e3a8a',
-        secondary: '#9333ea',
-        correct: '#10b981',
-        incorrect: '#ef4444',
-        neutral: '#f3f4f6',
+        primary: '#000000',
+        secondary: '#3a3131',
+        correct: '#44835C',
+        incorrect: '#A72F2F',
+        neutral: '#D1D5DB',
+        hover: '#9CA3AF',
+        card: '#FAEBD7',
+        next: '#5b86ff',
+        nextHover: '#1F5AFE'
       },
     },
   },
@@ -20,14 +22,14 @@ module.exports = {
     plugin(({ matchUtilities }) => {
       matchUtilities({
         txt: (value) => {
-          const [fontSize, lineHeight, fontWeight] = value.split(' ');
+          const [fontSize, lineHeight, fontWeight] = value.split(' ')
           return {
             fontSize: fontSize + 'px',
             lineHeight: lineHeight + 'px',
             fontWeight,
-          };
+          }
         },
-      });
+      })
     }),
   ],
-};
+}

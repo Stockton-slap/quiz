@@ -16,7 +16,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={className}
+      className={`${className} flex justify-center mx-auto px-3 py-5 rounded-[12px] uppercase txt-[16_16_700] font-[montserrat] cursor-pointer`}
       disabled={disabled || isLoading}
       onClick={onClick}
       {...props}
