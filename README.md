@@ -4,3 +4,7 @@
 - create page for non-existent path
 - fix eslint/prettier
 - configure tailwind config
+- lazy loding
+- dynamic imports
+- vercel deploy
+- ci/cd

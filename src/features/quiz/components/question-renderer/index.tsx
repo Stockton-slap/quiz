@@ -6,12 +6,16 @@ type IProps = {
   question: Question
   quizType: TypeProps
   onNext?: () => void
+  onAnswer?: (answer: string) => void
+  selectedAnswer?: string
 }
 
 export default function QuestionRenderer({
   question,
   quizType,
   onNext,
+  onAnswer,
+  selectedAnswer,
 }: IProps) {
   switch (quizType) {
     case 'single-choice':
@@ -19,6 +23,8 @@ export default function QuestionRenderer({
         <SingleChoiceQuestion
           question={question}
           onNext={onNext}
+          onAnswer={onAnswer}
+          selectedAnswer={selectedAnswer}
         />
       )
 
