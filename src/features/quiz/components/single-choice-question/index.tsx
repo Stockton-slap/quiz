@@ -6,19 +6,10 @@ import classNames from 'classnames'
 
 const ADVANCE_AFTER_MS = 1200
 
-type Props = {
-  question: Question
-  onNext?: () => void
-  onAnswer?: (answer: string) => void
-  selectedAnswer?: string
-}
+type Props = { question: Question; onNext?: () => void }
 
-export const SingleChoiceQuestion = ({
-  question,
-  onNext,
-  onAnswer,
-  selectedAnswer,
-}: Props) => {
+export const SingleChoiceQuestion = ({ question, onNext }: Props) => {
+  const [selectedAnswer, setSelectedAnswer] = useState('')
   const [showFeedback, setShowFeedback] = useState(false)
   const [isCorrect, setIsCorrect] = useState(false)
   const { title, options, correct } = question as SingleChoice
@@ -26,6 +17,7 @@ export const SingleChoiceQuestion = ({
   onNextRef.current = onNext
 
   useEffect(() => {
+    setSelectedAnswer('')
     setShowFeedback(false)
     setIsCorrect(false)
   }, [question])
@@ -40,7 +32,7 @@ export const SingleChoiceQuestion = ({
 
   const selectAnswer = (answer: string) => {
     if (showFeedback) return
-    onAnswer?.(answer)
+    setSelectedAnswer(answer)
   }
 
   const handleContinue = () => {

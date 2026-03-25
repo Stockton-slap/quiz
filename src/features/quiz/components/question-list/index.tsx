@@ -12,10 +12,6 @@ export default function QuestionList() {
 
   const [quiz, setQuiz] = React.useState<Quiz | null>(null)
   const [currentIndex, setCurrentIndex] = React.useState(0)
-  const [answers, setAnswers] = React.useState<string[]>(() => {
-    const stored = localStorage.getItem('answers')
-    return stored ? JSON.parse(stored) : []
-  })
 
   React.useEffect(() => {
     if (!slug) return
@@ -33,15 +29,6 @@ export default function QuestionList() {
 
   const handleNext = () => {
     setCurrentIndex((prev) => prev + 1)
-  }
-
-  const handleAnswer = (answer: string) => {
-    setAnswers((prev) => {
-      const copy = [...prev]
-      copy[currentIndex] = answer
-      localStorage.setItem('answers', JSON.stringify(copy))
-      return copy
-    })
   }
 
   const handleBack = () => {
@@ -75,8 +62,6 @@ export default function QuestionList() {
             question={currentQuestion}
             quizType={quiz.type}
             onNext={handleNext}
-            onAnswer={handleAnswer}
-            selectedAnswer={answers[currentIndex]}
           />
         </div>
       )}
