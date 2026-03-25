@@ -13,8 +13,9 @@ module.exports = {
         neutral: '#D1D5DB',
         hover: '#9CA3AF',
         card: '#FAEBD7',
-        next: '#5b86ff',
-        nextHover: '#1F5AFE'
+        next: '#3f6ff2',
+        nextDisabled: '#5b86ff',
+        nextEnabled: '#1F5AFE',
       },
     },
   },

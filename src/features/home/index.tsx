@@ -1,4 +1,4 @@
-import { Link } from "@/shared/components/common/link"
+import { Link } from '@/shared/components/common/link'
 
 export const Home = () => {
   return (
@@ -12,7 +12,7 @@ export const Home = () => {
         className="w-[200px] mt-4 mt-8 text-white bg-black flex justify-center mx-auto px-3 py-5 rounded-[12px] uppercase txt-[16_16_700] font-[montserrat] cursor-pointer"
         href="/quiz"
       >
-      Get started
+        Get started
       </Link>
     </div>
   )

@@ -1,13 +1,12 @@
 import { Question } from '../../../abstractions/question'
 
-export class MultipleChoiceQuestion extends Question {
+export class SingleChoice extends Question {
   constructor(
-    id: string,
     title: string,
     public options: string[],
     public correct: string,
   ) {
-    super(id, title)
+    super(title)
   }
 
   checkAnswer(userAnswer: string) {
@@ -15,13 +14,12 @@ export class MultipleChoiceQuestion extends Question {
   }
 }
 
-export class InputQuestion extends Question {
+export class Input extends Question {
   constructor(
-    id: string,
     title: string,
     public correct: string,
   ) {
-    super(id, title)
+    super(title)
   }
 
   checkAnswer(userAnswer: string) {
@@ -29,14 +27,13 @@ export class InputQuestion extends Question {
   }
 }
 
-export class MatchupQuestion extends Question {
+export class Matchup extends Question {
   constructor(
-    id: string,
     title: string,
     public buckets: string[][],
     public correctSequence: string[],
   ) {
-    super(id, title)
+    super(title)
   }
 
   checkAnswer(userAnswer: string[]) {
